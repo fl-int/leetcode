@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func isValidSudoku(board [][]byte) bool {
 	/*
 		Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
@@ -43,4 +45,21 @@ func isValidSudoku(board [][]byte) bool {
 	}
 
 	return true
+}
+
+func isValidSudokuTest() {
+	a := [][]byte{
+		{'5', '3', '.', '.', '7', '.', '.', '.', '.'},
+		{'6', '.', '.', '1', '9', '5', '.', '.', '.'},
+		{'.', '9', '8', '.', '.', '.', '.', '6', '.'},
+		{'8', '.', '.', '.', '6', '.', '.', '.', '3'},
+		{'4', '.', '.', '8', '.', '3', '.', '.', '1'},
+		{'7', '.', '.', '.', '2', '.', '.', '.', '6'},
+		{'.', '6', '.', '.', '.', '.', '2', '8', '.'},
+		{'.', '.', '.', '4', '1', '9', '.', '.', '5'},
+		{'.', '.', '.', '.', '8', '.', '.', '7', '9'},
+	}
+	fmt.Println(a)
+	k := isValidSudoku(a)
+	fmt.Println(k)
 }

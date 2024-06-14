@@ -19,7 +19,7 @@ func plusOne(digits []int) []int {
 	}
 	newLen := len(digits) + 1
 	oversized := make([]int, newLen)
-	for i, _ := range oversized {
+	for i := range oversized {
 		oversized[i] = 0
 	}
 	oversized[0] = 1
