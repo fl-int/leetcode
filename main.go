@@ -1,5 +1,28 @@
 package main
 
 func main() {
-	testLongestCommonPrefix()
+	/*head1 := ListNode{
+		Val: 1,
+		Next: &ListNode{
+			Val: 2,
+			Next: &ListNode{
+				Val: 3,
+				Next: &ListNode{
+					Val: 4,
+					Next: &ListNode{
+						Val: 5,
+					},
+				},
+			},
+		},
+	}*/
+
+	head2 := ListNode{
+		Val: 1,
+		Next: &ListNode{
+			Val: 2,
+		},
+	}
+
+	removeNthFromEnd(&head2, 2)
 }

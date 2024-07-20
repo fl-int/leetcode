@@ -5,10 +5,7 @@ import (
 	"math"
 )
 
-var b = foo()
-
 func longestCommonPrefix(strs []string) string {
-	a // Test
 	m := math.MaxInt
 
 	for i, s := range strs {
