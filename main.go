@@ -1,7 +1,7 @@
 package main
 
 func main() {
-	/*head1 := ListNode{
+	head1 := ListNode{
 		Val: 1,
 		Next: &ListNode{
 			Val: 2,
@@ -15,14 +15,14 @@ func main() {
 				},
 			},
 		},
-	}*/
+	}
 
-	head2 := ListNode{
+	/*head2 := ListNode{
 		Val: 1,
 		Next: &ListNode{
 			Val: 2,
 		},
-	}
+	}*/
 
-	removeNthFromEnd(&head2, 2)
+	reverseList(&head1)
 }
