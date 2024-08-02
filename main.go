@@ -1,28 +1,25 @@
 package main
 
 func main() {
-	head1 := ListNode{
+	list1 := ListNode{
 		Val: 1,
 		Next: &ListNode{
 			Val: 2,
 			Next: &ListNode{
-				Val: 3,
-				Next: &ListNode{
-					Val: 4,
-					Next: &ListNode{
-						Val: 5,
-					},
-				},
+				Val: 4,
 			},
 		},
 	}
 
-	/*head2 := ListNode{
+	list2 := ListNode{
 		Val: 1,
 		Next: &ListNode{
-			Val: 2,
+			Val: 3,
+			Next: &ListNode{
+				Val: 4,
+			},
 		},
-	}*/
+	}
 
-	reverseList(&head1)
+	mergeTwoLists(&list1, &list2)
 }
