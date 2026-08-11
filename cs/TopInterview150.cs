@@ -73,4 +73,39 @@ public class TopInterview150
         
         return sum;
     }
+    
+    // https://leetcode.com/problems/length-of-last-word/?envType=study-plan-v2&envId=top-interview-150
+    public int LengthOfLastWord(string s)
+    {
+        // "a" - ok
+        // "ab" - ok
+        // "a " - ok
+        // " a" - ok
+        // "a bc " - ok
+        
+        var i = s.Length - 1; // 1
+        var end = 0; // 3
+        var start = 0; // 0
+        while (i >= 0)
+        {
+            if (s[i] == ' ')
+            {
+                if (end != 0)
+                {
+                    return end - i;
+                }
+            }
+            else
+            {
+                if (end == 0)
+                {
+                    end = i;
+                }
+            }
+
+            i--;
+        }
+
+        return end + 1;
+    }
 }
