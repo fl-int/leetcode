@@ -108,4 +108,32 @@ public class TopInterview150
 
         return end + 1;
     }
+    
+    // https://leetcode.com/problems/is-subsequence/description/?envType=study-plan-v2&envId=top-interview-150
+    public bool IsSubsequence(string s, string t) {
+        // s = "", t = ""
+        // s = "a", t = "bcd"
+        // s = "a", t = "bad"
+        // s = "cat", t = "cactus"
+        // s = "cat", t = "atc"
+        
+        if (s.Length == 0)
+        {
+            return true;
+        }
+
+        var i = 0;
+        foreach (var c in t)
+        {
+            if (s[i] != c) continue;
+            
+            i++;
+            if (i == s.Length)
+            {
+                return true;
+            }
+        }
+        
+        return false;
+    }
 }
