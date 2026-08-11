@@ -136,4 +136,32 @@ public class TopInterview150
         
         return false;
     }
+    
+    
+    // https://leetcode.com/problems/ransom-note/description/?envType=study-plan-v2&envId=top-interview-150
+    public bool CanConstruct(string ransomNote, string magazine)
+    {
+        const int start = 'a';
+        const int end = 'z';
+        var m = new int[end-start+1];
+        foreach (var c in magazine)
+        {
+            m[c - start]++;
+        }
+
+        foreach (var c in ransomNote)
+        {
+            var i = c - start;
+            if (m[i] > 0)
+            {
+                m[i]--;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
