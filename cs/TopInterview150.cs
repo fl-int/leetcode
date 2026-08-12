@@ -164,4 +164,48 @@ public class TopInterview150
 
         return true;
     }
+    
+    // https://leetcode.com/problems/isomorphic-strings/description/?envType=study-plan-v2&envId=top-interview-150
+    public bool IsIsomorphic(string s, string t)
+    {
+        // add   , egg   => true
+        // f11   , b23   => false
+        // paper , title => true
+        // badc  , baba => true
+        var st = new Dictionary<char, char>();
+
+        for (var i = 0; i < s.Length; i++)
+        {
+            if (st.ContainsKey(s[i]))
+            {
+                if (st[s[i]] == t[i])
+                {
+                    continue;
+                }
+                
+                return false;
+            }
+            
+            st.Add(s[i], t[i]);
+        }
+        
+        st.Clear();
+        
+        for (var i = 0; i < t.Length; i++)
+        {
+            if (st.ContainsKey(t[i]))
+            {
+                if (st[t[i]] == s[i])
+                {
+                    continue;
+                }
+                
+                return false;
+            }
+            
+            st.Add(t[i], s[i]);
+        }
+
+        return true;
+    }
 }
