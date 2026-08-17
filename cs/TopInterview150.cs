@@ -5,7 +5,7 @@ public class TopInterview150
     // https://leetcode.com/problems/majority-element/description/?envType=study-plan-v2&envId=top-interview-150
     // Given an array nums of size n, return the majority element.
     //
-    // The majority element is the element that appears more than ⌊n / 2⌋ times.
+    // The majority element is the element that appears more than [n / 2] times.
     // You may assume that the majority element always exists in the array.
     public int MajorityElement(int[] nums)
     {
@@ -195,8 +195,7 @@ public class TopInterview150
         {
             if (st.ContainsKey(t[i]))
             {
-                if (st[t[i]] == s[i])
-                {
+                if (st[t[i]] == s[i]) {
                     continue;
                 }
                 
@@ -206,6 +205,47 @@ public class TopInterview150
             st.Add(t[i], s[i]);
         }
 
+        return true;
+    }
+    
+    // https://leetcode.com/problems/word-pattern/description/?envType=study-plan-v2&envId=top-interview-150
+    public bool WordPattern(string pattern, string s)
+    {
+        // "abba", "dog cat cat dog"
+        
+        if (pattern.Length == 0)
+        {
+            return true;
+        }
+
+        var words = s.Split(' ');
+        if (words.Length != pattern.Length)
+        {
+            return false;
+        }
+        
+        var letterToWord = new Dictionary<char, string>(pattern.Length);
+        var wordToLetter = new Dictionary<string, char>(pattern.Length);
+        
+        for (var i = 0; i < pattern.Length; i++)
+        {
+            var letter = pattern[i]; // a
+            var word = words[i]; // dog
+            if (letterToWord.TryGetValue(letter, out var lastWord) && lastWord != word)
+            {
+                return false;
+            }
+            letterToWord[letter] = word;
+
+
+            if (wordToLetter.TryGetValue(word, out var lastLetter) && lastLetter != letter)
+            {
+                return false;
+            }
+            
+            wordToLetter[word] = letter;
+        }
+        
         return true;
     }
 }
